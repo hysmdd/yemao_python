@@ -9,7 +9,7 @@ data = {
     'from': 'auto',
     'to': 'zh-CHS',
     'client': 'web',
-    'text': f'{text}',
+    'text': text,
     'uuid': '4a29f1c7-4669-451d-b051-97bfee175818',
     'pid': 'sogou-dict-vr',
     'addSugg': 'on'
