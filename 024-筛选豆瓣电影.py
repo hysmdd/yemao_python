@@ -1,11 +1,11 @@
 # 筛选豆瓣电影
 import requests
 
-url = "https://m.douban.com/rexxar/api/v2/movie/recommend"
+url = "https://m.douban.com/rexxar/api/v2/tv/recommend"
 
-tags = '犯罪'
-excepted_rate = 8
-page_size = 100
+tags = '爱情,华语,2022,优酷'
+excepted_rate = 6
+page_size = 1
 
 params = {
     'refresh': '0',
@@ -29,5 +29,7 @@ for item in result:
         print("*"*30)
         print(f"电影名称：{item['title']}")
         print(f"上映时间：{item['year']}")
+        print(f"基本简介：{item['card_subtitle']}")
         print(f"电影评分：{item['rating']['value']}")
+        print(f"热门评论：{item['comment']['comment']}")
         print(f"海报照片：{item['pic']['large']}")
