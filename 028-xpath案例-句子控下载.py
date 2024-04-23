@@ -20,13 +20,13 @@ html = etree.HTML(text)
 result = html.xpath('//li//div[@class="sentenceCard"]//div[@class="top"]//span[@class="link"]/text()')
 
 for item in result:
-    print(re.sub('', '', item))
+    print(re.sub('  ', '', item))
     print("=" * 120)
 
-# with open('./file/打火机与公主裙经典语录.txt', 'w', encoding='UTF-8') as f:
-#     for item in result:
-#         f.writelines(re.sub('\\s+', '', item))
-#         f.writelines("\n\n")
+with open('./file/打火机与公主裙经典语录.txt', 'w', encoding='UTF-8') as f:
+    for item in result:
+        f.writelines(re.sub('  ', '', item))
+        f.writelines("\n\n")
 
 index_resp = requests.get(index_url, headers=headers)
 index_html = etree.HTML(index_resp.text)
