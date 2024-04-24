@@ -11,8 +11,8 @@ count = 0
 
 class Producer(threading.Thread):
     def run(self) -> None:
+        global total_money, cycle_time, count
         while True:
-            global total_money, cycle_time, count
             lock.acquire()
             money = random.randint(100, 5000)
             if count > cycle_time:
