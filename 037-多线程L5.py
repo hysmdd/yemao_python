@@ -35,17 +35,6 @@ class Consumer(threading.Thread):
             global total_money, cycle, count
             lock.acquire()
             money = random.randint(100, 5000)
-            # if total_money >= money:
-            #     total_money -= money
-            #     print(f"消费者{threading.current_thread().name}消费了{money}元")
-            #     print(f"当前余额：{total_money}")
-            #     print("=" * 20)
-            # else:
-            #     if count > cycle:
-            #         lock.release()
-            #         print(f"消费者{threading.current_thread().name}想消费{money}元，余额不足，并且生产者不再生产")
-            #         break
-            #     print(f"消费者{threading.current_thread().name}想消费{money}元，余额不足，余额只有{total_money}元")
             while total_money < money:
                 if count > cycle:
                     print(f"消费者{threading.current_thread().name}想消费{money}元，余额不足，并且生产者不再生产")
